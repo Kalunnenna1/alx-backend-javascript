@@ -1,10 +1,17 @@
-const getListStudentIds = (getList) => {
-  let lisdata = [];
-  if (!(getList instanceof Array)) {
-    return lisdata;
+/*
+ * File: 1-get_list_student_ids.js
+ * Auth: Nne
+ */
+
+/**
+ * getListStudentIds - Retrieves the id of student's list.
+ * @studentList: List of students
+ * Return: An array of ids from a list of object.
+ */
+export default function getListStudentIds(studentList) {
+  if (studentList instanceof Array) {
+    return studentList.map((item) => item.id);
   }
-  lisdata = getList.map((results) => results.id);
-  return lisdata;
-};
-export default getListStudentIds;
+  return [];
+}
 
